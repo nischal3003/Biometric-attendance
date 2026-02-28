@@ -5,7 +5,7 @@ from frappe.utils import now_datetime, getdate, get_datetime
 # Biometric Sync Script - Version 1.1.2 (STRICT SET-ONCE MAPPING)
 def run_attendance_sync():
     conn = None
-
+    frappe.log_error("attendance job test","running.....")
     try:
         # 1. LOAD CONFIG & SET START TIME
         config = frappe.get_doc("Job Configuration", "Job Configuration")
@@ -243,3 +243,4 @@ def save_results(count, start_time):
         "records_pulled": count,
         "end_time": now_datetime()
     })
+
